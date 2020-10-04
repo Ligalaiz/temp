@@ -1,0 +1,176 @@
+:root {
+  font-size: 10px;
+}
+
+.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 2rem;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000000;
+
+  background-repeat: repeat;
+  background-color: #5b483a;
+  background-image: url('../img/noise_transparent.png');
+
+  user-select: none;
+  overflow: hidden;
+}
+
+.display__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.display__list--middle .display__item,
+.display__list--last .display__item {
+  width: 50%;
+}
+
+.display__list--last {
+  margin-bottom: 0;
+}
+
+.display__item {
+  border-radius: 25px;
+}
+
+.display__item img {
+  border-radius: 25px;
+  max-height: 30vh;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.display__link {
+  position: relative;
+
+  display: block;
+  max-height: 30vh;
+  border-radius: 25px;
+  border: 2px solid transparent;
+
+  font-size: 0;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  outline: none;
+
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+
+.display__link::after {
+  content: 'Сауна №1';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  font-size: 4rem;
+  font-weight: 600;
+
+  color: #ffffff;
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.display__item--room-1 .display__link::after {
+  content: 'Сауна №1';
+}
+.display__item--room-2 .display__link::after {
+  content: 'Русская сауна №2';
+}
+.display__item--room-3 .display__link::after {
+  content: 'Русская сауна №3';
+}
+.display__item--room-4 .display__link::after {
+  content: 'Турецкий хамам №4';
+}
+.display__item--room-5 .display__link::after {
+  content: 'Турецкий хамам №5';
+}
+.display__item--room-6 .display__link::after {
+  content: 'Русская сауна №6';
+}
+.display__item--room-7 .display__link::after {
+  content: 'Русская сауна №7';
+}
+
+/* slider */
+
+.slider {
+  margin: 0 auto;
+  z-index: 500;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slider {
+  width: 85vw;
+}
+
+.box-modal {
+  width: 90vw;
+  height: 90vh;
+  padding: 0;
+
+  background: none;
+  box-shadow: none;
+}
+
+.box-modal_close {
+  right: -20px;
+
+  color: #ffffff;
+  font-size: 40px;
+}
+
+.room__item {
+  height: 90vh;
+  outline: none;
+}
+
+.room__item img {
+  width: 90vw;
+  height: 90vh;
+  object-fit: contain;
+}
+
+.slick-prev,
+.slick-next {
+  width: 60px;
+  height: 120px;
+}
+
+.slick-prev {
+  left: -55px;
+}
+
+.slick-next {
+  right: -55px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 46px;
+}
