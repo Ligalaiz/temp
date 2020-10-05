@@ -3,9 +3,17 @@ const display = document.querySelector('.display'),
 
 let count = 0;
 
+function sliderClose() {
+  if (flag === false) console.log(flag);
+  $('.slider').slick('unslick');
+  slider.querySelectorAll('.room__item').forEach((item) => {
+    item.remove();
+  });
+}
+
 display.addEventListener('click', function (event) {
   let source = '';
-
+  flag = true;
   if (event.target.getAttribute('data-room') === null) return;
 
   source = event.target.getAttribute('data-room');
@@ -17,31 +25,31 @@ display.addEventListener('click', function (event) {
     switch (source) {
       case '1':
         // count = 8;
-        count = 6;
+        count = 7;
         break;
       case '2':
         // count = 4;
-        count = 6;
+         count = 7;
         break;
       case '3':
         // count = 40;
-        count = 6;
+         count = 7;
         break;
       case '4':
         // count = 36;
-        count = 6;
+         count = 7;
         break;
       case '5':
         // count = 41;
-        count = 6;
+         count = 7;
         break;
       case '6':
         // count = 49;
-        count = 6;
+         count = 7;
         break;
       case '7':
         // count = 24;
-        count = 6;
+         count = 7;
         break;
     }
 
@@ -66,18 +74,26 @@ display.addEventListener('click', function (event) {
       dots: false,
       infinite: true,
       slidesToShow: 1,
+      swipe: true,
       speed: 300,
       fade: true,
       cssEase: 'linear',
     });
   });
 
-  const closeBtn = document.querySelector('.box-modal_close');
+  const closeBtn = document.querySelector('.box-modal_close'),
+    overlay = document.querySelector('.arcticmodal-container');
 
   closeBtn.addEventListener('click', () => {
-    $('.slider').slick('unslick');
-    slider.querySelectorAll('.room__item').forEach((item) => {
-      item.remove();
-    });
+    sliderClose();
+  });
+
+  overlay.addEventListener('click', (e) => {
+    if (
+      e.target.classList.contains('box-modal') ||
+      e.target.classList.contains('arcticmodal-container')
+    ) {
+      sliderClose();
+    }
   });
 });
