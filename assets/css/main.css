@@ -81,7 +81,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-
+  line-height: 1.1;
   font-size: 4rem;
   font-weight: 600;
 
@@ -95,23 +95,29 @@
 .display__item--room-1 .display__link::after {
   content: 'Сауна №1';
 }
+
 .display__item--room-2 .display__link::after {
-  content: 'Русская сауна №2';
+  content: 'Русская баня №2';
 }
+
 .display__item--room-3 .display__link::after {
-  content: 'Русская сауна №3';
+  content: 'Русская баня №3';
 }
+
 .display__item--room-4 .display__link::after {
   content: 'Турецкий хамам №4';
 }
+
 .display__item--room-5 .display__link::after {
   content: 'Турецкий хамам №5';
 }
+
 .display__item--room-6 .display__link::after {
-  content: 'Русская сауна №6';
+  content: 'Русская баня №6';
 }
+
 .display__item--room-7 .display__link::after {
-  content: 'Русская сауна №7';
+  content: 'Русская баня №7';
 }
 
 /* slider */

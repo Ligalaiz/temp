@@ -4,7 +4,6 @@ const display = document.querySelector('.display'),
 let count = 0;
 
 function sliderClose() {
-  if (flag === false) console.log(flag);
   $('.slider').slick('unslick');
   slider.querySelectorAll('.room__item').forEach((item) => {
     item.remove();
@@ -13,7 +12,6 @@ function sliderClose() {
 
 display.addEventListener('click', function (event) {
   let source = '';
-  flag = true;
   if (event.target.getAttribute('data-room') === null) return;
 
   source = event.target.getAttribute('data-room');
@@ -24,41 +22,35 @@ display.addEventListener('click', function (event) {
 
     switch (source) {
       case '1':
-        // count = 8;
-        count = 7;
+        count = 8;
         break;
       case '2':
-        // count = 4;
-         count = 7;
+        count = 40;
         break;
       case '3':
-        // count = 40;
-         count = 7;
+        count = 36;
         break;
       case '4':
-        // count = 36;
-         count = 7;
+        count = 41;
         break;
       case '5':
-        // count = 41;
-         count = 7;
+        count = 4;
         break;
       case '6':
-        // count = 49;
-         count = 7;
+        count = 49;
         break;
       case '7':
-        // count = 24;
-         count = 7;
+        count = 24;
         break;
     }
 
     for (let i = 0; i < count; i++) {
       str += `
           <div class="room__item">
-            <img id="image" src="./assets/img/preview/${
-        i + 1
-      }.jpg" alt="room-${source}" />
+            <img id="image"
+            src="./assets/img/room-${source}/${
+              i + 1
+            }.jpg" alt="room-${source}" />
           </div>
           `;
     }
